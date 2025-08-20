@@ -119,48 +119,61 @@ section h2 {
 }
 
 /* Certificates Section */
+/* Certificates layout */
 .certificates-list {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-direction: column; /* stack certificates vertically */
+  gap: 2.5rem;           /* space between each certificate */
 }
 
 .certificate-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;     /* side by side */
   align-items: flex-start;
   gap: 2rem;
   background-color: #f9f4ef;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  flex-wrap: wrap;         /* allows stacking on very small screens */
 }
 
 .certificate-details {
-  flex: 1;
-}
-
-.certificate-details .cert-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #5a3e2b;
-  margin-bottom: 0.5rem;
-}
-
-.certificate-details .cert-description {
-  font-size: 1rem;
-  color: #6e5a4e;
+  flex: 1 1 400px;         /* min width 400px, can grow */
 }
 
 .certificate-preview {
-  flex: 1;
+  flex: 0 0 500px;         /* fixed width for PDF preview */
   min-width: 300px;
+  display: flex;
+  flex-direction: column;  /* stack multiple PDFs vertically */
+  gap: 1rem;
 }
 
 .certificate-preview iframe {
+  width: 100%;
+  height: 400px;           /* fixed height to avoid shrinking */
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex-shrink: 0;          /* prevent shrinking */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+  .certificate-item {
+    flex-direction: column;  /* stack text above preview */
+    align-items: stretch;
+  }
+
+  .certificate-details,
+  .certificate-preview {
+    flex: 1 1 100%;
+  }
+
+  .certificate-preview iframe {
+    height: 300px;          /* smaller height for mobile */
+  }
 }
 
 
