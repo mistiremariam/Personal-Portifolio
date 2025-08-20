@@ -29,8 +29,8 @@ body {
    Header & Navigation
 =================================== */
 header {
-  background: #dbc8a8; /* brown shade */
-  color: #8e5311;
+  background: #ceb283; /* brown shade */
+  color: #673b09;
   padding: 15px 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
@@ -55,7 +55,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #875d0f;
+  color: #694a12;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -63,7 +63,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #5d3606; /* light creamy on hover */
+  color: #5c3c15; /* light creamy on hover */
   border-bottom: 2px solid #ffe6c7;
   padding-bottom: 2px;
 }
