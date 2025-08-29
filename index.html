@@ -9,32 +9,56 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo"></div>
   <header>
-    <nav>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about/about.html">About</a></li>
-      <li><a href="certificates/certificates.html">Certificates</a></li>
-      <li><a href="contact/contact.html">Contact</a></li>
-      <li><a href="projects/projects.html">Projects</a></li>
-    </ul>
-  </nav>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about/about.html">About</a></li>
+        <li><a href="certificates/certificates.html">Certificates</a></li>
+        <li><a href="contact/contact.html">Contact</a></li>
+        <li><a href="projects/projects.html">Projects</a></li>
+      </ul>
+    </nav>
   </header>
-
-
-
 
   <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <img src="assetss/profile.jpg" alt="Mistiremariam Girma" class="profile-pic">
-      <h1>Hello, I’m <span>Mistiremariam Getahun Girma</span></h1>
-      <p>Aspiring Space Scientist | Mechanical Engineering Student | Writer | Software Developer</p>
-      <a href="projects/projects.html" class="btn">View My Work</a>
+  <section class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text fade-up">
+        <h1>Hello, I’m <span>Mistiremariam Getahun Girma</span></h1>
+        <p>Mechanical Engineering Student | Software Developer | Space & Robotics Enthusiast | Writer</p>
+        <a href="projects/projects.html" class="btn primary">View My Work</a>
+      </div>
+      <div class="hero-image fade-up">
+        <img src="assetss/profile.jpg" alt="Mistiremariam Girma" class="profile-pic">
+      </div>
     </div>
-  </header>
+    <!-- Optional floating stars/particles for space effect -->
+    <div class="floating-stars">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <!-- Quick Links / Highlights -->
+  <section class="highlights section">
+    <div class="container grid-3">
+      <div class="card highlight-card fade-up">
+        <h3>Space Projects</h3>
+        <p>Explore my involvement in satellite research, astronomy competitions, and space tech initiatives.</p>
+        <a href="projects/projects.html" class="link-btn">See Projects →</a>
+      </div>
+      <div class="card highlight-card fade-up">
+        <h3>Robotics & Coding</h3>
+        <p>Dive into my work with robotics, automation, and software development projects.</p>
+        <a href="projects/projects.html" class="link-btn">Explore Work →</a>
+      </div>
+      <div class="card highlight-card fade-up">
+        <h3>Achievements & Certificates</h3>
+        <p>Check out my international competitions, certifications, and leadership initiatives.</p>
+        <a href="certificates/certificates.html" class="link-btn">View Certificates →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>

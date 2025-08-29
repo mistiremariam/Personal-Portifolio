@@ -11,6 +11,8 @@
   <!-- SEO basics -->
   <meta name="description" content="Get in touch with Mistiremariam — portfolio contact page." />
   <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-h0Yb4h9f+X5V7qR1L35Q+KqJvK8l0T2H1rN6QFgN9t8/rQq/gVgf8FlXtl6JML2wZsS3lS7t9I8T7/EDV9JJ0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body class="contact-page">
 
@@ -32,90 +34,115 @@
   </header>
 
   <main>
-    <!-- Hero section -->
-    <section class="hero section">
-      <div class="container hero-flex">
-        <div class="hero-text">
-          <h1>Let’s Connect</h1>
-          <p class="lead">
-            Whether it’s a collaboration, job opportunity, or just a hello — 
-            I’d love to hear from you.
-          </p>
-          <a href="#contact-form" class="btn primary">Send me a message</a>
+  <!-- Hero Contact Section -->
+  <section class="hero-contact section">
+    <div class="container hero-flex">
+      <!-- Text Panel -->
+      <div class="hero-text fade-up">
+        <h2>Let’s Connect</h2>
+        <p class="lead">
+          Whether it’s a collaboration, a project, a mentorship, or just a hello — 
+          I’d love to hear from you.
+        </p>
+        <a href="#contact-form" class="btn primary">Send me a message</a>
+      </div>
+
+      <!-- Quick Info Card -->
+      <div class="hero-card fade-up">
+        <h2>Quick Info</h2>
+        <ul class="kv-list">
+          <li><span class="key">Response time</span> <span class="value">24–48 hours</span></li>
+          <li><span class="key">Location</span> <span class="value">Addis Ababa, Ethiopia</span></li>
+          <li><span class="key">Status</span> <span class="value">Open to opportunities</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p class="lead">Feel free to reach out via email or connect with me professionally online.</p>
+
+    <div class="contact-grid">
+      <!-- Email Card -->
+      <div class="contact-card fade-up">
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p class="muted">Best for detailed inquiries</p>
+        <a href="mailto:mistiremariamgirma@gmail.com" class="contact-link">
+          mistiremariamgirma@gmail.com →
+        </a>
+      </div>
+
+      <!-- LinkedIn Card -->
+      <div class="contact-card fade-up">
+        <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+        <h3>LinkedIn</h3>
+        <p class="muted">Let’s connect professionally</p>
+        <a href="https://www.linkedin.com/in/mistiremariam-girma-91875a18a/" target="_blank" rel="noopener" class="contact-link">
+          Mistiremariam Girma →
+        </a>
+      </div>
+
+      <!-- GitHub Card -->
+      <div class="contact-card fade-up">
+        <div class="icon"><i class="fa-brands fa-github"></i></div>
+        <h3>GitHub</h3>
+        <p class="muted">View my work & projects</p>
+        <a href="https://github.com/mistiremariam" target="_blank" rel="noopener" class="contact-link">
+          Mistiremariam Getahun Girma →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Contact Form -->
+<section id="contact-form" class="section alt">
+  <div class="container">
+    <h2 class="section-title fade-up">Send a Message</h2>
+    <p class="muted center fade-up">Fill out the form below, and I’ll get back to you as soon as possible.</p>
+
+    <form class="contact-card card fade-up" id="contactMailtoForm" novalidate>
+      <div class="form-grid">
+        <div class="form-field">
+          <input type="text" id="name" name="name" placeholder=" " required />
+          <label for="name">Your Name</label>
+          <small class="error"></small>
         </div>
-        <div class="hero-card card">
-          <h2>Quick Info</h2>
-          <ul class="kv-list">
-            <li><span>Response time</span> <span>24–48 hours</span></li>
-            <li><span>Location</span> <span>Addis Ababa, Ethiopia</span></li>
-            <li><span>Status</span> <span>Open to opportunities</span></li>
-          </ul>
+
+        <div class="form-field">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email">Your Email</label>
+          <small class="error"></small>
+        </div>
+
+        <div class="form-field full">
+          <input type="text" id="subject" name="subject" placeholder=" " required />
+          <label for="subject">Subject</label>
+          <small class="error"></small>
+        </div>
+
+        <div class="form-field full">
+          <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
+          <label for="message">Message</label>
+          <small class="error"></small>
         </div>
       </div>
-    </section>
 
-    <!-- Contact links -->
-    <section class="section">
-      <div class="container grid-3">
-        <div class="card contact-card">
-          <h3>Email</h3>
-          <p class="muted">Best for detailed inquiries</p>
-          <a href="mailto:mistiremariamgirma@gmail.com" class="link-row">
-            mistiremariamgirma@gmail.com →
-          </a>
-        </div>
-        <div class="card contact-card">
-          <h3>LinkedIn</h3>
-          <p class="muted">Let’s connect professionally</p>
-          <a href="https://www.linkedin.com/in/mistiremariam-girma-91875a18a/" target="_blank" rel="noopener" class="link-row">
-            Mistiremariam Girma →
-          </a>
-        </div>
-        <div class="card contact-card">
-          <h3>GitHub</h3>
-          <p class="muted">View my work & projects</p>
-          <a href="https://github.com/mistiremariam" target="_blank" rel="noopener" class="link-row">
-            Mistiremariam Getahun Girma→
-          </a>
-        </div>
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Send Message</button>
       </div>
-    </section>
+    </form>
+  </div>
+</section>
 
-    <!-- Contact form -->
-    <section id="contact-form" class="section alt">
-      <div class="container">
-        <h2 class="section-title">Send a Message</h2>
-        <p class="muted center">Fill out the form below, and I’ll get back to you soon.</p>
-
-        <form class="card form" id="contactMailtoForm" novalidate>
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="name">Your name</label>
-              <input type="text" id="name" name="name" placeholder="Jane Doe" required />
-              <small class="error"></small>
-            </div>
-            <div class="form-field">
-              <label for="email">Your email</label>
-              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
-              <small class="error"></small>
-            </div>
-            <div class="form-field full">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Collaboration idea" required />
-              <small class="error"></small>
-            </div>
-            <div class="form-field full">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" placeholder="Tell me more…" required></textarea>
-              <small class="error"></small>
-            </div>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
