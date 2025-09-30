@@ -274,33 +274,67 @@ section h2 {
 =================================== */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
-  background: linear-gradient(135deg, #fffdfd, #f5e5d9);
+  background: #fff;
+  border-radius: 16px;
   padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #e3d5c5;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e0da;
+  box-shadow: 0 4px 12px rgba(60, 40, 20, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(82, 54, 25, 0.797);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(60, 40, 20, 0.2);
 }
 
 .project-card h3 {
+  font-size: 1.4rem;
   margin-bottom: 12px;
-  color: #563712;
-  font-size: 1.3rem;
+  color: #3e2a1d;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.project-card p {
-  font-size: 1rem;
-  color: #5a4a4a;
+.project-card h3 i {
+  font-size: 1.2rem;
+  color: #b57a3d;
 }
+
+.project-card p, 
+.project-card ul {
+  font-size: 0.95rem;
+  color: #4b3d3d;
+  line-height: 1.5;
+}
+
+.project-card ul {
+  padding-left: 20px;
+}
+
+.project-tags {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag {
+  background: #f5e5d9;
+  color: #563712;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
 
 /* ================================
    Contact Form
