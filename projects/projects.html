@@ -32,9 +32,57 @@
     }
     .project-card {
       display: none; /* hidden until filter shows */
+      margin-bottom: 30px;
     }
     .project-card.show {
       display: block;
+    }
+
+    /* Slideshow Styles */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 12px 0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .slides {
+      display: none;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 8px;
+      margin-top: -22px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      background: rgba(86,55,18,0.6);
+      border-radius: 50%;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    .prev:hover, .next:hover {
+      background: rgba(86,55,18,0.9);
+    }
+    .next {
+      right: 10px;
+    }
+    .prev {
+      left: 10px;
+    }
+    .fade {
+      animation: fadeEffect 1s;
+    }
+    @keyframes fadeEffect {
+      from {opacity: 0.4;}
+      to {opacity: 1;}
     }
   </style>
 </head>
@@ -75,15 +123,64 @@
         <!-- Engineering -->
         <div class="project-card engineering show">
           <h3><i class="fas fa-cogs"></i> Centrifugal Pump Impeller Design</h3>
+          
+          <!-- Slideshow Container -->
+          <div class="slideshow-container">
+            <div class="slides fade">
+              <img src="../assetss/impeller.jpg" alt="Centrifugal Pump Impeller Design - Load Calculations">
+            </div>
+            <div class="slides fade">
+              <img src="../assetss/impeller 1.jpg" alt="Centrifugal Pump Impeller Design - Energy Analysis">
+            </div>
+      
+
+            <!-- Next and Previous Buttons -->
+            <a class="prev" onclick="plusSlides(-1, this)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, this)">&#10095;</a>
+          </div>
+
           <p>
             Designed and documented the casting process for a centrifugal pump impeller
-            using SolidWorks. Work included material selection, sand casting process planning,
+            using Blender and SolidWorks. Work included material selection, sand casting process planning,
             and defect inspection analysis as part of Manufacturing Engineering coursework.
           </p>
           <div class="project-tags">
             <span class="project-tag">Mechanical Engineering</span>
             <span class="project-tag">Casting</span>
             <span class="project-tag">SolidWorks</span>
+          </div>
+        </div>
+
+        <!-- HVAC System Design with Slideshow -->
+        <div class="project-card engineering show">
+          <h3><i class="fas fa-industry"></i> HVAC System Design</h3>
+
+          <!-- Slideshow Container -->
+          <div class="slideshow-container">
+            <div class="slides fade">
+              <img src="../assetss/photo_2025-04-16_15-32-14.jpg" alt="HVAC System Design - Load Calculations">
+            </div>
+            <div class="slides fade">
+              <img src="../assetss/photo_2025-04-06_11-11-04.jpg" alt="HVAC System Design - Energy Analysis">
+            </div>
+            <div class="slides fade">
+              <img src="../assetss/photo_2025-04-06_14-41-38.jpg" alt="HVAC System Design - Final Layout">
+            </div>
+
+            <!-- Next and Previous Buttons -->
+            <a class="prev" onclick="plusSlides(-1, this)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, this)">&#10095;</a>
+          </div>
+
+          <p>
+            Designed a Heating, Ventilation, and Air Conditioning (HVAC) system for a
+            multi-story building using Carrier HAP software. The project involved load calculations,
+            equipment selection, and energy efficiency analysis as part of HVAC coursework.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">HVAC</span>
+            <span class="project-tag">Energy Efficiency</span>
+            <span class="project-tag">Building Systems</span>
           </div>
         </div>
 
@@ -187,7 +284,8 @@
             <span class="project-tag">Community</span>
           </div>
         </div>
-                <!-- MiNT Initiative -->
+
+        <!-- MiNT Initiative -->
         <div class="project-card leadership writing engineering show">
           <h3><i class="fas fa-lightbulb"></i> MiNT (Mechanical Initiative)</h3>
           <p>
@@ -217,7 +315,6 @@
           </div>
         </div>
 
-
         <!-- Personal -->
         <div class="project-card tech show">
           <h3><i class="fas fa-laptop-code"></i> Personal Portfolio Website</h3>
@@ -240,25 +337,36 @@
     <p>&copy; 2025 Mistiremariam Girma. All rights reserved.</p>
   </footer>
 
-  <!-- Filter Script -->
+  <!-- Scripts -->
   <script>
+    // Project Filter
     function filterSelection(category) {
       let cards = document.getElementsByClassName("project-card");
       let buttons = document.getElementsByClassName("filter-btn");
-
-      // update active button
-      for (let btn of buttons) {
-        btn.classList.remove("active");
-      }
+      for (let btn of buttons) btn.classList.remove("active");
       event.target.classList.add("active");
-
       for (let card of cards) {
         card.classList.remove("show");
-        if (category === "all" || card.classList.contains(category)) {
-          card.classList.add("show");
-        }
+        if (category === "all" || card.classList.contains(category)) card.classList.add("show");
       }
     }
+
+    // Slideshow Controls
+    function plusSlides(n, element) {
+      let container = element.closest(".slideshow-container");
+      let slides = container.getElementsByClassName("slides");
+      let currentIndex = Array.from(slides).findIndex(slide => slide.style.display === "block");
+      if (currentIndex === -1) currentIndex = 0;
+      slides[currentIndex].style.display = "none";
+      let newIndex = (currentIndex + n + slides.length) % slides.length;
+      slides[newIndex].style.display = "block";
+    }
+
+    // Initialize slideshows
+    document.querySelectorAll(".slideshow-container").forEach(container => {
+      let slides = container.getElementsByClassName("slides");
+      if (slides.length > 0) slides[0].style.display = "block";
+    });
   </script>
 
 </body>
