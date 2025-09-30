@@ -7,6 +7,36 @@
   <link rel="stylesheet" href="../css/style.css">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .filter-btn {
+      background: #f5e5d9;
+      color: #563712;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #563712;
+      color: #fff;
+    }
+    .project-card {
+      display: none; /* hidden until filter shows */
+    }
+    .project-card.show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,10 +58,22 @@
     <section>
       <h2>Highlighted Projects, Activities & Volunteering</h2>
 
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterSelection('all')">All</button>
+        <button class="filter-btn" onclick="filterSelection('engineering')">Engineering</button>
+        <button class="filter-btn" onclick="filterSelection('space')">Space</button>
+        <button class="filter-btn" onclick="filterSelection('writing')">Writing</button>
+        <button class="filter-btn" onclick="filterSelection('sustainability')">Sustainability</button>
+        <button class="filter-btn" onclick="filterSelection('leadership')">Leadership</button>
+        <button class="filter-btn" onclick="filterSelection('volunteering')">Volunteering</button>
+        <button class="filter-btn" onclick="filterSelection('tech')">Tech</button>
+      </div>
+
       <div class="projects">
 
         <!-- Engineering -->
-        <div class="project-card">
+        <div class="project-card engineering show">
           <h3><i class="fas fa-cogs"></i> Centrifugal Pump Impeller Design</h3>
           <p>
             Designed and documented the casting process for a centrifugal pump impeller
@@ -45,10 +87,27 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- Space -->
+        <div class="project-card space show">
+          <h3><i class="fas fa-rocket"></i> Space Science Engagement</h3>
+          <ul>
+            <li>Fellow Trainee at the <strong>Ethiopian Space Science and Geospatial Institute (SSGI)</strong>.</li>
+            <li>Active <strong>member of the Ethiopian Space Science Society (ESSS)</strong>.</li>
+            <li>Delivered a youth session presentation on <em>Dark Matter in Dwarf Galaxies</em> at the 20th ESSS General Assembly.</li>
+            <li>Node for the <strong>100 Hours of Stargazing</strong> global event (October 2–4, 2025).</li>
+            <li>Active contributor at <strong>SGAC</strong>, promoting space sustainability and youth engagement.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">Space Science</span>
+            <span class="project-tag">Outreach</span>
+          </div>
+        </div>
+
+        <!-- Robotics/Internship -->
+        <div class="project-card engineering tech show">
           <h3><i class="fas fa-robot"></i> Abugida Robotics Internship</h3>
           <p>
-            Interned at <strong>Abugida Robotics</strong>, contributing to robotics and automation
+            Interning at <strong>Abugida Robotics</strong>, contributing to robotics and automation
             projects focused on technology for social impact and innovation.
           </p>
           <div class="project-tags">
@@ -58,52 +117,25 @@
           </div>
         </div>
 
-        <!-- Space Science -->
-        <div class="project-card">
-          <h3><i class="fas fa-rocket"></i> 20th ESSS General Assembly Presentation</h3>
+        <!-- Data Annotation -->
+        <div class="project-card tech show">
+          <h3><i class="fas fa-database"></i> Data Annotation (EDGE & Mastercard Foundation)</h3>
           <p>
-            Delivered a youth session presentation on <em>Dark matter in dwarf galaxies</em>
-            at the 20th Ethiopian Space Science Society General Assembly, inspiring youth in
-            astrophysics and space research.
+            Contributed to <strong>data annotation projects</strong> in partnership with EDGE and the Mastercard Foundation,
+            supporting the development of inclusive AI systems through structured data preparation.
           </p>
           <div class="project-tags">
-            <span class="project-tag">Space Science</span>
-            <span class="project-tag">Astrophysics</span>
-            <span class="project-tag">Presentation</span>
+            <span class="project-tag">AI</span>
+            <span class="project-tag">Data</span>
+            <span class="project-tag">Tech</span>
           </div>
         </div>
 
-        <div class="project-card">
-          <h3><i class="fas fa-user-astronaut"></i> Ethiopian Space Science & Geospatial Institute</h3>
-          <p>
-            Fellow Trainee at the <strong>Ethiopian Space Science and Geospatial Institute</strong>,
-            participating in technical and research training sessions to build skills in astronomy
-            and satellite applications.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Training</span>
-            <span class="project-tag">Space Science</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3><i class="fas fa-globe"></i> SGAC & Space Advocacy</h3>
-          <p>
-            Active member of the <strong>Space Generation Advisory Council (SGAC)</strong>,
-            contributing to international discussions on space sustainability and youth engagement
-            in global space policy.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Leadership</span>
-            <span class="project-tag">Space Policy</span>
-          </div>
-        </div>
-
-        <!-- Sustainability & Community -->
-        <div class="project-card">
+        <!-- Sustainability -->
+        <div class="project-card sustainability volunteering show">
           <h3><i class="fas fa-recycle"></i> Zelaki Project – Plastic Recycling & Sustainability</h3>
           <p>
-            Core member of <strong>Zelaki</strong>, a student-led environmental initiative
+            Active member of <strong>Zelaki</strong>, a student-led environmental initiative
             focused on plastic recycling, sustainability campaigns, and community awareness.
             Advocated for circular economy principles and environmental justice in Ethiopia.
           </p>
@@ -113,7 +145,8 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- Volunteering -->
+        <div class="project-card volunteering show">
           <h3><i class="fas fa-hand-holding-heart"></i> Child Cancer Awareness Campaign</h3>
           <p>
             Volunteered in campaigns raising awareness on childhood cancer,
@@ -125,13 +158,13 @@
           </div>
         </div>
 
-        <!-- Writing & Advocacy -->
-        <div class="project-card">
+        <!-- Writing -->
+        <div class="project-card writing show">
           <h3><i class="fas fa-pen-nib"></i> Writing & Advocacy</h3>
           <ul>
             <li>Media Director of <strong>Teen-Ethiopia</strong>, producing magazines and youth-focused content.</li>
             <li>Authored essays and articles for international competitions including Lex-Lead, Goi Peace Foundation, and E-Safe Girls.</li>
-            <li>Published <em>“Beyond the Horizon: Africa’s Journey to the Stars”</em> for AstroLit’25 competition, highlighting Africa’s space journey.</li>
+            <li>Published <em>“Beyond the Horizon: Africa’s Journey to the Stars”</em> for AstroLit’25 competition.</li>
           </ul>
           <div class="project-tags">
             <span class="project-tag">Writing</span>
@@ -140,22 +173,53 @@
         </div>
 
         <!-- Leadership -->
-        <div class="project-card">
+        <div class="project-card leadership volunteering show">
           <h3><i class="fas fa-users"></i> Leadership & Community Engagement</h3>
           <ul>
             <li>Ambassador at <strong>Stardust</strong>, inspiring young women in space science and technology.</li>
             <li>Executive member of <strong>AIESEC in Ethiopia</strong>, OGX team (Outgoing Global Exchange).</li>
-            <li>Organized and led initiatives at Addis Ababa University including innovation boot camps and welcome sessions.</li>
+            <li>Organized initiatives at Addis Ababa University including innovation boot camps and welcome sessions.</li>
+            <li>Member of <strong>Pro-Digify</strong>, supporting youth tech and innovation communities.</li>
           </ul>
           <div class="project-tags">
             <span class="project-tag">Leadership</span>
-            <span class="project-tag">Youth Engagement</span>
+            <span class="project-tag">Volunteering</span>
+            <span class="project-tag">Community</span>
+          </div>
+        </div>
+                <!-- MiNT Initiative -->
+        <div class="project-card leadership writing engineering show">
+          <h3><i class="fas fa-lightbulb"></i> MiNT (Mechanical Initiative)</h3>
+          <p>
+            Executive member and story writer at <strong>MiNT (Mechanical Initiative)</strong>. 
+            Led youth engagement activities, contributed to storytelling projects, and supported 
+            community-focused initiatives within the School of Mechanical and Industrial Engineering.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Leadership</span>
+            <span class="project-tag">Writing</span>
+            <span class="project-tag">Engineering</span>
+          </div>
+        </div>
+
+        <!-- HerWellness Web App -->
+        <div class="project-card tech volunteering show">
+          <h3><i class="fas fa-heartbeat"></i> HerWellness – Mental Well-Being Platform</h3>
+          <p>
+            Designed and built <strong>HerWellness</strong>, a web application dedicated to the mental 
+            well-being of women. An all-in-one digital space providing access to resources, community 
+            support, and wellness tracking to empower women’s health and resilience.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Web Development</span>
+            <span class="project-tag">Health</span>
             <span class="project-tag">Volunteering</span>
           </div>
         </div>
 
+
         <!-- Personal -->
-        <div class="project-card">
+        <div class="project-card tech show">
           <h3><i class="fas fa-laptop-code"></i> Personal Portfolio Website</h3>
           <p>
             Built this personal portfolio website from scratch using HTML and CSS.
@@ -175,6 +239,27 @@
   <footer>
     <p>&copy; 2025 Mistiremariam Girma. All rights reserved.</p>
   </footer>
+
+  <!-- Filter Script -->
+  <script>
+    function filterSelection(category) {
+      let cards = document.getElementsByClassName("project-card");
+      let buttons = document.getElementsByClassName("filter-btn");
+
+      // update active button
+      for (let btn of buttons) {
+        btn.classList.remove("active");
+      }
+      event.target.classList.add("active");
+
+      for (let card of cards) {
+        card.classList.remove("show");
+        if (category === "all" || card.classList.contains(category)) {
+          card.classList.add("show");
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>

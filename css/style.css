@@ -334,7 +334,34 @@ section h2 {
   border-radius: 12px;
   font-weight: 500;
 }
-
+/* Filter Bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .filter-btn {
+      background: #f5e5d9;
+      color: #563712;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #563712;
+      color: #fff;
+    }
+    .project-card {
+      display: none; /* hidden until filter shows */
+    }
+    .project-card.show {
+      display: block;
+    }
 
 /* ================================
    Contact Form
